@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orion - Google Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Space Background Canvas -->
+    <canvas id="spaceCanvas"></canvas>
+
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="logo">
+          <i class="fas fa-user-astronaut"></i>
+          <h1>Orion Manager</h1>
+        </div>
+
+        <div class="nav-buttons">
+          <a href="#" class="nav-btn active" id="pricingNav">Delete Google activities in one-click</a>
+          <a href="#" class="nav-btn" id="toolNav" style="display: none"
+            >Activity Tool</a
+          >
+        </div>
+      </header>
+
+      <!-- Pricing Page (Default View) -->
+      <div class="pricing-page" id="pricingPage">
+        <div class="pricing-header">
+          <h2>Choose an Activity Management Plan</h2>
+          <p>
+            Select the plan that best fits your needs. All plans include secure
+            deletion of your Google activity data with our advanced privacy
+            technology.
+          </p>
+        </div>
+
+
+        <div class="pricing-cards">
+          <!-- Basic Plan -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <div class="pricing-card-title">
+                <i class="fas fa-rocket"></i>
+                <span>Basic</span>
+              </div>
+              <div class="pricing-card-description">
+                For individuals who need to clean up essential Google services
+              </div>
+            </div>
+
+            <div class="pricing-card-price">
+              <div class="price monthly-price">₦50,000</div>
+              <div class="price yearly-price" style="display: none">
+                ₦24,000
+              </div>
+            </div>
+
+            <div class="pricing-card-features">
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>1 Gmail Account</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Search & YouTube activity</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>30-day activity deletion</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Basic privacy report</span>
+              </div>
+              <div class="feature-item disabled">
+                <i class="fas fa-times"></i>
+                <span>Location history deletion</span>
+              </div>
+              <div class="feature-item disabled">
+                <i class="fas fa-times"></i>
+                <span>Email activity cleanup</span>
+              </div>
+              <div class="feature-item disabled">
+                <i class="fas fa-times"></i>
+                <span>Priority support</span>
+              </div>
+            </div>
+
+            <button class="buy-btn" data-plan="basic">
+              <i class="fas fa-shopping-cart"></i> Choose Basic Plan
+            </button>
+          </div>
+
+          <!-- Professional Plan (Featured) -->
+          <div class="pricing-card featured">
+            <div class="pricing-card-header">
+              <div class="pricing-card-title">
+                <i class="fas fa-crown"></i>
+                <span>Professional</span>
+              </div>
+              <div class="pricing-card-description">
+                Complete activity management for power users and professionals
+              </div>
+            </div>
+
+            <div class="pricing-card-price">
+              <div class="price monthly-price">₦75,000</div>
+              <div class="price yearly-price" style="display: none">
+                ₦75,000
+              </div>
+            </div>
+
+            <div class="pricing-card-features">
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>3 Gmail Accounts</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>All search & media activity</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Full history deletion (all time)</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Advanced privacy reports</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Location history deletion</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Email & drive activity cleanup</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Priority email support</span>
+              </div>
+            </div>
+
+            <button class="buy-btn" data-plan="professional">
+              <i class="fas fa-crown"></i> Choose Professional Plan
+            </button>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <div class="pricing-card-title">
+                <i class="fas fa-building"></i>
+                <span>Enterprise</span>
+              </div>
+              <div class="pricing-card-description">
+                For businesses needing to manage multiple accounts and
+                compliance
+              </div>
+            </div>
+
+            <div class="pricing-card-price">
+              <div class="price monthly-price">₦120,000</div>
+              <div class="price yearly-price" style="display: none">
+                ₦120,000<span>/year</span>
+              </div>
+            </div>
+
+            <div class="pricing-card-features">
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Unlimited Gmail Account</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>All activity types included</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Multi-account management</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Compliance reporting</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Bulk deletion tools</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>Scheduled cleanups</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>24/7 Phone & chat support</span>
+              </div>
+            </div>
+
+            <button class="buy-btn" data-plan="enterprise">
+              <i class="fas fa-building"></i> Choose Enterprise Plan
+            </button>
+          </div>
+        </div>
+
+        <!-- Payment Section (Hidden initially) -->
+        <div class="payment-section" id="paymentSection">
+          <h3>Complete Your Purchase</h3>
+
+          <div class="selected-plan-info">
+            <h4 id="selectedPlanName">Professional Plan</h4>
+            <p id="selectedPlanDescription">
+              Complete activity management for power users and professionals
+            </p>
+            <div class="plan-price" id="selectedPlanPrice">₦50,000</div>
+            <div id="selectedPlanFeatures">
+              <!-- Features will be populated dynamically -->
+            </div>
+          </div>
+
+          <p style="margin-bottom: 20px; color: var(--text-secondary)">
+            You will be redirected to Paystack to complete your payment
+            securely.
+          </p>
+
+          <!-- Replace with your actual Paystack payment link -->
+          <a
+            href="https://paystack.com/pay/your-payment-link"
+            target="_blank"
+            class="paystack-btn"
+            id="paystackBtn"
+          >
+            <i class="fas fa-lock"></i>
+            <span>Pay Securely with Paystack</span>
+          </a>
+
+          <div class="back-to-plans" id="backToPlans">
+            <i class="fas fa-arrow-left"></i> Back to plans
+          </div>
+        </div>
+      </div>
+
+      <!-- Access Message (After Payment) -->
+      <div class="access-message" id="accessMessage">
+        <i class="fas fa-unlock-alt"></i>
+        <h2>Access Granted!</h2>
+        <p>
+          Thank you for your purchase! You now have full access to the Orion
+          Activity Manager. Click the button below to start managing your Google
+          activity data.
+        </p>
+        <button
+          class="buy-btn"
+          id="accessToolBtn"
+          style="max-width: 300px; margin: 0 auto"
+        >
+          <i class="fas fa-tools"></i> Access Activity Tool
+        </button>
+      </div>
+
+      <!-- Main Dashboard (Hidden initially) -->
+      <div class="dashboard" id="dashboard">
+        <!-- Services Section -->
+        <div class="services-section">
+          <div class="section-title">
+            <i class="fas fa-th"></i>
+            <h2>Google Services</h2>
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 25px">
+            Select the services from which you want to delete your activity
+            data. You can select multiple services.
+          </p>
+
+          <div class="services-grid" id="servicesGrid">
+            <!-- Services will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+          <h2 class="control-title">Activity Deletion Control</h2>
+
+          <div class="selected-services">
+            <h3 style="margin-bottom: 15px; font-size: 1.1rem">
+              Selected Services (<span id="selectedCount">0</span>)
+            </h3>
+            <div id="selectedServicesList">
+              <!-- Selected services will appear here -->
+              <p
+                style="
+                  color: var(--text-secondary);
+                  text-align: center;
+                  padding: 20px;
+                "
+              >
+                No services selected
+              </p>
+            </div>
+          </div>
+
+          <div class="time-range">
+            <label>Delete activities from:</label>
+            <div class="time-options">
+              <div class="time-option selected" data-days="7">Last 7 days</div>
+              <div class="time-option" data-days="30">Last 30 days</div>
+              <div class="time-option" data-days="90">Last 90 days</div>
+              <div class="time-option" data-days="0">All time</div>
+            </div>
+          </div>
+
+          <button id="deleteBtn" class="delete-btn" disabled>
+            <i class="fas fa-trash-alt"></i> Delete Selected Activities
+          </button>
+
+          <!-- Progress Section -->
+          <div class="progress-section" id="progressSection">
+            <div class="progress-header">
+              <span>Deletion Progress</span>
+              <span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div id="progressDetails">
+              <!-- Progress items will appear here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <p>
+          © 2025 Orion Manager. This tool helps you manage your Google
+          activity data.
+        </p>
+        <p class="warning-text">
+          <i class="fas fa-exclamation-triangle"></i> Warning: Deleting activity
+          data is permanent and cannot be undone. This may affect your
+          personalized experiences across Google services.
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Space Background Animation
+      const canvas = document.getElementById("spaceCanvas");
+      const ctx = canvas.getContext("2d");
+      let stars = [];
+      let shootingStars = [];
+
+      // Set canvas size
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      // Initialize stars
+      function initStars() {
+        stars = [];
+        const starCount = Math.min(
+          200,
+          Math.floor((canvas.width * canvas.height) / 5000)
+        );
+
+        for (let i = 0; i < starCount; i++) {
+          stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 1.5 + 0.5,
+            speed: Math.random() * 0.3 + 0.1,
+            opacity: Math.random() * 0.5 + 0.5,
+          });
+        }
+      }
+
+      // Create shooting star
+      function createShootingStar() {
+        if (Math.random() < 0.01 && shootingStars.length < 2) {
+          shootingStars.push({
+            x: Math.random() * canvas.width,
+            y: 0,
+            length: Math.random() * 50 + 30,
+            speed: Math.random() * 10 + 5,
+            angle: (Math.random() * Math.PI) / 4 + Math.PI / 8,
+            opacity: 1,
+          });
+        }
+      }
+
+      // Draw stars
+      function drawStars() {
+        stars.forEach((star) => {
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+          ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Move stars
+          star.y += star.speed;
+          if (star.y > canvas.height) {
+            star.y = 0;
+            star.x = Math.random() * canvas.width;
+          }
+        });
+      }
+
+      // Draw shooting stars
+      function drawShootingStars() {
+        for (let i = shootingStars.length - 1; i >= 0; i--) {
+          const star = shootingStars[i];
+
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(108, 99, 255, ${star.opacity})`;
+          ctx.lineWidth = 2;
+          ctx.moveTo(star.x, star.y);
+          ctx.lineTo(
+            star.x - star.length * Math.cos(star.angle),
+            star.y + star.length * Math.sin(star.angle)
+          );
+          ctx.stroke();
+
+          // Add glow effect
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(255, 255, 255, ${star.opacity * 0.5})`;
+          ctx.lineWidth = 1;
+          ctx.moveTo(star.x, star.y);
+          ctx.lineTo(
+            star.x - star.length * Math.cos(star.angle),
+            star.y + star.length * Math.sin(star.angle)
+          );
+          ctx.stroke();
+
+          // Move shooting star
+          star.x += star.speed * Math.cos(star.angle);
+          star.y += star.speed * Math.sin(star.angle);
+          star.opacity -= 0.02;
+
+          // Remove if faded out
+          if (star.opacity <= 0) {
+            shootingStars.splice(i, 1);
+          }
+        }
+      }
+
+      // Animation loop
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw a subtle gradient background
+        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, "#0a0e17");
+        gradient.addColorStop(1, "#0c1120");
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        drawStars();
+        createShootingStar();
+        drawShootingStars();
+
+        requestAnimationFrame(animate);
+      }
+
+      // Initialize canvas and animation
+      window.addEventListener("resize", () => {
+        resizeCanvas();
+        initStars();
+      });
+
+      resizeCanvas();
+      initStars();
+      animate();
+    </script>
+  </body>
+</html>
