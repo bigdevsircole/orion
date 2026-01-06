@@ -1,3 +1,108 @@
+===============================================
+🌌 ORION - GOOGLE ACTIVITY MANAGER
+===============================================
+
+Version: 1.0.0
+Last Updated: December 2025
+Author: Caleb Yinusa
+License: MIT
+
+===============================================
+📖 TABLE OF CONTENTS
+===============================================
+
+1.  Project Overview
+2.  Key Features
+3.  Prerequisites
+4.  Installation
+5.  Configuration
+6.  Usage Guide
+7.  Technical Details
+8.  Browser Support
+9.  Performance
+10. Security Considerations
+11. Deployment
+12. Testing
+13. Contributing
+14. License
+15. Support
+16. Acknowledgments
+17. Contact
+
+===============================================
+1. PROJECT OVERVIEW
+===============================================
+
+Orion is a premium web application designed to help users manage and delete their Google services activity data. The application features a stunning dark space theme with animated backgrounds and provides a complete user journey from pricing selection to activity deletion.
+
+✨ Key Highlights:
+- Single HTML file containing all functionality
+- Dark space theme with animated starfield
+- Three-tier pricing system with Paystack integration
+- Comprehensive user details collection form
+- Google services activity deletion simulation
+- Responsive design for all devices
+
+===============================================
+2. KEY FEATURES
+===============================================
+
+🎨 IMMERSIVE DESIGN
+- Space-themed animated background with shooting stars
+- Dark UI with purple/blue accent colors
+- Fully responsive layout
+- Smooth CSS animations and transitions
+
+💳 PRICING & PAYMENT
+- Three pricing tiers: Basic, Professional, Enterprise
+- Monthly/Yearly billing options (20% yearly discount)
+- Paystack payment integration
+- Plan-based service limitations
+
+👤 USER MANAGEMENT
+- Detailed registration form with validation
+- Local storage for user data persistence
+- Progress tracking with visual indicators
+- User info display in header
+
+🔧 ACTIVITY MANAGEMENT
+- Selection of 8 Google services
+- Time range control (7/30/90 days or all time)
+- Plan-based access restrictions
+
+📊 DATA COLLECTION
+- Personal information collection
+- Google account details
+- Deletion preferences
+- Security consents and agreements
+
+===============================================
+3. PREREQUISITES
+===============================================
+
+Before using this application:
+
+REQUIRED:
+- Modern web browser (Chrome 80+, Firefox 75+, Safari 13+)
+- Basic understanding of HTML/CSS/JavaScript
+- Text editor for code modifications
+
+FOR PRODUCTION:
+- Paystack account for payment processing
+- Web hosting service
+- SSL certificate for secure deployment
+
+===============================================
+4. INSTALLATION
+===============================================
+
+STEP 1: DOWNLOAD THE APPLICATION
+- Save the index.html file to your computer
+- The file contains all HTML, CSS, and JavaScript
+
+STEP 2: FILE STRUCTURE
+project-folder/
+└── index.html # Main application file
 
 STEP 3: RUN LOCALLY
 Method A: Direct File Opening
@@ -35,13 +140,12 @@ Location: JavaScript section, around line 650
 
 const pricingPlans = {
     basic: {
-        name: "Basic",
-        description: "For individuals...",
-        monthlyPrice: 2500,    // ₦2,500
-        yearlyPrice: 24000,    // ₦24,000
+        name: "Basic"
+        monthlyPrice: 50000,    // ₦50,000
+        yearlyPrice: 75000,    // ₦75,000
         features: [...],
         maxServices: 3,
-        timeLimit: 30
+        timeLimit: Infinite
     },
     // ... other plans
 };
@@ -111,27 +215,6 @@ STEP 4: MANAGE ACTIVITIES (Variable)
 5. Monitor real-time progress
 6. View completion summary
 
-DEVELOPER USAGE:
-
-EXTENDING THE FORM:
-To add new form fields:
-
-<div class="form-group">
-    <label>Field Name <span class="required">*</span></label>
-    <input type="text" id="fieldId" name="fieldName" required placeholder="Enter value">
-</div>
-
-ADDING NEW SERVICES:
-Extend the googleServices array:
-
-{
-    id: 'newservice',
-    name: 'New Service Name',
-    description: 'Service description',
-    icon: 'fas fa-icon-name',
-    color: '#HEXCODE',
-    activityCount: 1000
-}
 
 CUSTOMIZING ANIMATIONS:
 Modify the space animation in the JavaScript section:
@@ -158,16 +241,16 @@ ARCHITECTURE:
 TECHNOLOGY STACK:
 Frontend:
 - HTML5 (Structure)
-- CSS3 (Styling with CSS Variables)
+- CSS5 (Styling with CSS Variables)
 - Vanilla JavaScript (Functionality)
 - Canvas API (Animations)
 - Font Awesome 6 (Icons)
 
 File Structure Breakdown:
 HTML Structure: 200+ lines
-CSS Styles: 1500+ lines
-JavaScript Logic: 1000+ lines
-Total: ~2700 lines of code
+CSS Styles: 600+ lines
+JavaScript Logic: 300+ lines
+Total: ~1500 lines of code
 
 KEY JAVASCRIPT COMPONENTS:
 
@@ -560,89 +643,9 @@ Target Metrics:
 - Time to Interactive: < 3.5s
 - Total Blocking Time: < 200ms
 
-===============================================
-13. ANALYTICS INTEGRATION
-===============================================
-
-GOOGLE ANALYTICS SETUP:
-
-1. Add to Head Section (Before </head>):
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
-</script>
-
-2. Tracking Events:
-
-Plan Selection:
-document.querySelectorAll('.buy-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        gtag('event', 'select_plan', {
-            'plan_name': this.dataset.plan,
-            'billing_period': selectedPeriod
-        });
-    });
-});
-
-Form Submission:
-document.getElementById('userDetailsFormElement').addEventListener('submit', () => {
-    gtag('event', 'form_submission', {
-        'form_name': 'user_details',
-        'user_country': document.getElementById('country').value
-    });
-});
-
-Deletion Process:
-document.getElementById('deleteBtn').addEventListener('click', () => {
-    gtag('event', 'deletion_started', {
-        'services_count': selectedServices.length,
-        'time_range': selectedTimeRange
-    });
-});
-
-CONVERSION TRACKING:
-
-Payment Conversion:
-// After successful payment simulation
-gtag('event', 'purchase', {
-    transaction_id: 'T_' + Date.now(),
-    value: pricingPlans[selectedPlan].monthlyPrice,
-    currency: 'NGN',
-    items: [{
-        item_name: selectedPlan + '_plan',
-        item_category: 'subscription'
-    }]
-});
-
-User Registration:
-gtag('event', 'sign_up', {
-    method: 'form_submission'
-});
-
-CUSTOM DASHBOARD METRICS:
-
-Key Metrics to Track:
-1. Conversion Rate: Visits → Plan Selection
-2. Payment Success Rate: Plan Selection → Payment
-3. Form Completion Rate: Payment → Form Submission
-4. Service Usage: Which services are most selected
-5. Time Range Preferences: Most popular time ranges
-6. User Countries: Geographic distribution
-7. Device Breakdown: Mobile vs Desktop usage
-
-PRIVACY-COMPLIANT ANALYTICS OPTIONS:
-
-Alternative to Google Analytics:
-1. Plausible Analytics (Privacy-focused)
-2. Fathom Analytics (Simple, privacy-friendly)
-3. Matomo (Self-hosted)
-4. Simple Analytics (GDPR compliant)
 
 ===============================================
-14. CONTRIBUTING
+13. CONTRIBUTING
 ===============================================
 
 CONTRIBUTION GUIDELINES:
@@ -713,7 +716,7 @@ orion-activity-manager/
 └── README.md
 
 ===============================================
-15. LICENSE
+14. LICENSE
 ===============================================
 
 MIT License
@@ -741,7 +744,7 @@ SOFTWARE.
 For full license text, see LICENSE file.
 
 ===============================================
-16. SUPPORT
+15. SUPPORT
 ===============================================
 
 GETTING HELP:
@@ -803,7 +806,7 @@ ESCALATION PROCEDURE:
 4. Fourth Level: Priority Support (4 hour response for enterprise)
 
 ===============================================
-17. ACKNOWLEDGMENTS
+16. ACKNOWLEDGMENTS
 ===============================================
 
 THANKS TO:
@@ -841,39 +844,15 @@ REFERENCE MATERIALS:
 - Web.dev Guides
 
 ===============================================
-18. CONTACT
+17. CONTACT
 ===============================================
 
 PROJECT MAINTAINER:
-Name: Your Name
-Email: your.email@example.com
-Twitter: @yourhandle
-GitHub: yourusername
-Website: https://yourwebsite.com
-
-BUSINESS INQUIRIES:
-Email: business@yourdomain.com
-Phone: +234 XXX XXX XXXX
-Address: Your Business Address
-
-TECHNICAL SUPPORT:
-Email: support@yourdomain.com
-Documentation: https://docs.yourdomain.com
-Issues: https://github.com/yourusername/orion-activity-manager/issues
-
-SOCIAL MEDIA:
-Twitter: https://twitter.com/yourhandle
-LinkedIn: https://linkedin.com/company/yourcompany
-GitHub: https://github.com/yourusername
-
-NEWSLETTER:
-Subscribe: https://yourdomain.com/newsletter
-Archive: https://yourdomain.com/newsletter/archive
-
-PRESS KIT:
-Available: https://yourdomain.com/press
-Logo: https://yourdomain.com/press/logo
-Screenshots: https://yourdomain.com/press/screenshots
+Name: Caleb Yinusa
+Email: caleb.yinusa@gmail.com
+Twitter: @calebyinusaa
+GitHub: bigdevsircole
+Website: https://caleb-yinusa.vercel.app
 
 ===============================================
 📈 PROJECT STATUS
