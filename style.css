@@ -693,3 +693,481 @@
           transform: translateY(-10px);
         }
       }
+
+      /* ===== MARKETING SECTIONS STYLING ===== */
+
+      /* Hero Section */
+      .hero-section {
+        text-align: center;
+        padding: 100px 20px;
+        background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(76, 200, 255, 0.05) 100%);
+        border-radius: 20px;
+        margin-bottom: 60px;
+        border: 1px solid rgba(108, 99, 255, 0.2);
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .hero-content {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, var(--accent), var(--accent-light));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .cta-btn {
+        padding: 14px 32px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .cta-btn.primary {
+        background: linear-gradient(to right, var(--accent), var(--accent-light));
+        color: white;
+      }
+
+      .cta-btn.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+      }
+
+      .cta-btn.secondary {
+        background: transparent;
+        color: var(--accent);
+        border: 2px solid var(--accent);
+      }
+
+      .cta-btn.secondary:hover {
+        background: rgba(108, 99, 255, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* Why Choose Section */
+      .why-section {
+        margin-bottom: 80px;
+      }
+
+      .why-section h2,
+      .how-works-section h2,
+      .privacy-section h2,
+      .features-section h2,
+      .testimonials-section h2,
+      .faq-section h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        color: var(--text);
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .why-card {
+        background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(76, 200, 255, 0.05));
+        border: 1px solid rgba(108, 99, 255, 0.2);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .why-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent);
+        box-shadow: 0 15px 40px rgba(108, 99, 255, 0.15);
+      }
+
+      .why-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+
+      .why-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+      }
+
+      .why-card p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      /* How It Works Section */
+      .how-works-section {
+        margin-bottom: 80px;
+      }
+
+      .steps-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .step {
+        flex: 1;
+        min-width: 200px;
+        background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(76, 200, 255, 0.05));
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid rgba(108, 99, 255, 0.2);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .step:hover {
+        transform: translateY(-8px);
+        border-color: var(--accent);
+      }
+
+      .step-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(to right, var(--accent), var(--accent-light));
+        border-radius: 50%;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .step h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+
+      .step p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+      }
+
+      .step-arrow {
+        font-size: 1.5rem;
+        color: var(--accent);
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        .step-arrow {
+          display: block;
+        }
+      }
+
+      /* Privacy & Security Section */
+      .privacy-section {
+        background: linear-gradient(135deg, rgba(76, 200, 255, 0.1), rgba(108, 99, 255, 0.1));
+        padding: 60px 30px;
+        border-radius: 20px;
+        margin-bottom: 80px;
+        border: 1px solid rgba(108, 99, 255, 0.2);
+      }
+
+      .privacy-content {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .privacy-content h2 {
+        margin-bottom: 40px;
+      }
+
+      .privacy-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .privacy-item {
+        text-align: center;
+      }
+
+      .privacy-item i {
+        font-size: 2.5rem;
+        color: var(--accent);
+        margin-bottom: 15px;
+      }
+
+      .privacy-item h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+
+      .privacy-item p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      /* Features Section */
+      .features-section {
+        margin-bottom: 80px;
+      }
+
+      .features-intro {
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+      }
+
+      .feature-box {
+        background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(76, 200, 255, 0.05));
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        border: 1px solid rgba(108, 99, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-8px);
+        border-color: var(--accent);
+        box-shadow: 0 15px 40px rgba(108, 99, 255, 0.15);
+      }
+
+      .feature-box i {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+      }
+
+      .feature-box h4 {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+
+      .feature-box p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      /* Testimonials Section */
+      .testimonials-section {
+        margin-bottom: 80px;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .testimonial-card {
+        background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(76, 200, 255, 0.05));
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid rgba(108, 99, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--accent);
+        box-shadow: 0 15px 40px rgba(108, 99, 255, 0.15);
+      }
+
+      .stars {
+        color: var(--premium);
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+      }
+
+      .testimonial-card p {
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+        line-height: 1.6;
+        font-style: italic;
+      }
+
+      .testimonial-author {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .testimonial-author strong {
+        color: var(--text);
+      }
+
+      .testimonial-author span {
+        color: var(--accent);
+        font-size: 0.85rem;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        margin-bottom: 60px;
+      }
+
+      .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(76, 200, 255, 0.05));
+        border: 1px solid rgba(108, 99, 255, 0.2);
+        border-radius: 12px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item.active {
+        border-color: var(--accent);
+        box-shadow: 0 10px 30px rgba(108, 99, 255, 0.15);
+      }
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        cursor: pointer;
+        background: rgba(108, 99, 255, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .faq-question:hover {
+        background: rgba(108, 99, 255, 0.1);
+      }
+
+      .faq-question h4 {
+        margin: 0;
+        font-size: 1.05rem;
+        text-align: left;
+        flex: 1;
+      }
+
+      .faq-question i {
+        color: var(--accent);
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer {
+        padding: 0 20px 20px 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+        padding: 20px;
+      }
+
+      .faq-answer p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-section {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .why-section,
+      .how-works-section,
+      .privacy-section,
+      .features-section,
+      .testimonials-section,
+      .faq-section {
+        animation: fadeInUp 0.8s ease-out 0.1s both;
+      }
+
+      /* Responsive adjustments for marketing sections */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1rem;
+        }
+
+        .cta-btn {
+          padding: 12px 24px;
+          font-size: 0.95rem;
+        }
+
+        .why-section h2,
+        .how-works-section h2,
+        .privacy-section h2,
+        .features-section h2,
+        .testimonials-section h2,
+        .faq-section h2 {
+          font-size: 2rem;
+        }
+
+        .steps-container {
+          flex-direction: column;
+        }
+
+        .step {
+          width: 100%;
+        }
+
+        .privacy-section {
+          padding: 40px 20px;
+        }
+
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .faq-question h4 {
+          font-size: 1rem;
+        }
+      }
