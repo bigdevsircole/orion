@@ -20,7 +20,7 @@
         </div>
 
         <div class="nav-buttons">
-          <a href="#" class="nav-btn active" id="pricingNav">Delete Google activities in one-click</a>
+          <a href="#" class="nav-btn active" id="pricingNav">Delete Google activities in one click</a>
           <a href="#" class="nav-btn" id="toolNav" style="display: none"
             >Activity Tool</a
           >
@@ -743,14 +743,14 @@
           heroGetStarted.addEventListener("click", () => {
             showPricingPage();
             setTimeout(() => {
-              document.querySelector(".pricing-cards")?.scrollIntoView({ behavior: "smooth" });
+              document.querySelector(".pricing-header")?.scrollIntoView({ behavior: "smooth" });
             }, 100);
           });
         }
         
         if (heroLearnMore) {
           heroLearnMore.addEventListener("click", () => {
-            document.querySelector(".why-section")?.scrollIntoView({ behavior: "smooth" });
+            document.querySelector(".how-works-section")?.scrollIntoView({ behavior: "smooth" });
           });
         }
       }
